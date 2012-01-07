@@ -1,88 +1,252 @@
-<!DOCTYPE html>
+
+<!DOCTYPE html> <!-- The new doctype -->
 <html>
-<head>
-  <meta charset='utf-8'>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>locAAPE</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="ui.dropdownchecklist.standalone.css" />
+        <script src="http://jquery.com/src/jquery-latest.js"></script>
+        <script src="jquery-ui-1.8.13.custom.min.js"></script>
+        <script src="ui.dropdownchecklist-1.4-min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".teamOption").dropdownchecklist({emptyText: "Select Locations Here...",maxDropHeight: 150, width:200});
+            });
 
-  <title>lmedlock/locAAPE @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #eab136;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #154ec9; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #154ec9; }
-    h3 { text-align: center; color: #154ec9; }
-    a { color: #154ec9; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
-
-<body>
-  <a href="https://github.com/lmedlock/locAAPE"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/lmedlock/locAAPE/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/lmedlock/locAAPE/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/lmedlock/locAAPE">locAAPE</a>
-      <span class="small">by <a href="https://github.com/lmedlock">lmedlock</a></span></h1>
-
-    <div class="description">
-      
-    </div>
-
+        </script>
+        
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <style type="text/css">
+        .clear {
+          zoom: 1;
+          display: block;
+        }
+        </style>
+        <![endif]-->
+        
+    </head>
     
+    <body>
+        
+        <section id="page"> <!-- Defining the #page section with the section tag -->
+            <header> <!-- Defining the header section of the page with the appropriate tag -->
+                <hgroup>
+                    <h1>locAAPE</h1>
+                    <h3>Engagement as f(location type)</h3>
+                </hgroup>
+            </header>
+            
+            <section id="articles"> 
+				
 
-    
+                <div class="line"></div>  <!-- Dividing line -->
+                    
+                <article id="article1">
+                    <h2>ccDev</h2>
+                    <div class="line"></div>
+                    <div class="articleBody clear">
+                        <div class="dev-list">
+                            <ul>
+                                <li>Home</li>
+                                <li>Gym</li>
+                                <li>Café</li>
+                                <li>Hub/Touchdown</li>
+                                <li>Cafeteria</li>
+                                <li>Kitchen</li>
+                                <li>Corridor</li>
+                                <li>Phone Booth</li>
+                                <li>Small Lab -Proto</li>
+                                <li>Machine Shop</li>
+                                <li>Manufacturing Lab</li>
+                                <li>Demo Room</li>
+                                <li>Auditorium</li>
+                                <li>Office Room Desk</li>
+                                <li>Cubicle Desk</li>
+                                <li>Open Space Desk</li>
+                                <li>Quiet Room</li>
+                                <li>Team Space - Room</li>
+                                <li>Team Space - Big Table</li>
+                                <li>Meeting Room</li>
+                                <li>Project Space - Wall</li>
+                                <li>Project Space - Room</li>
+                                <li>3D Team Neighborhood</li>
+                                <li>Friend Home</li>
+                                <li>Restaurant</li>
+                                <li>Train Station</li>
+                                <li>Airport Gate/Lounge</li>
+                                <li>Train</li>
+                                <li>Airplane</li>
+                                <li>Car</li>
+                                <li>Free Address Desk</li>
+                            <ul>
+                        </div>
+                        <div class="aape-zones">
+                            <div class="grn-line">
+                                <img style="display:none;" id="home" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/sensor.png"/>
+                                <img style="display:none;" id="shop" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/smart_glasses.png"/>
+                                <img style="display:none;" id="fabLab" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/laptop.jpg"/>
+                                <img style="display:none;" id="mtgRoom" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/tablet_touch.png"/>
+                                <img style="display:none;" id="projRoom" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/tablet_pc.jpg"/>
+                                <img style="display:none;" id="projWall" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/desktop.png"/>
+                                <img style="display:none;" id="quietRoom" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/robot.png"/>
+                                <img style="display:none;" id="smallLab" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/kinect.jpg"/>
+                                <img style="display:none;" id="teamTable" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/smartboard.png"/>
+                                <img style="display:none;" id="teamRoom" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/iroom.png"/>
+                                <img style="display:none;" id="3dTeam" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/iroom.png"/>
+                            </div>
+                            <div class="blu-line">
+                                <img style="display:none;" id="cubeDesk" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/whiteboard.png"/>
+                                <img style="display:none;" id="openDesk" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/postnote.png"/>
+                                <img style="display:none;" id="officeDesk" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
+                                <img style="display:none;" id="demoRoom" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
+                                <img style="display:none;" id="hub" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
+                                <img style="display:none;" id="phoneBooth" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
+                            </div>
+                            <div class="ylw-line">
+                                <img style="display:none;" id="auditorium" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/usb.png"/>
+                                <img style="display:none;" id="cafeteria" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/hdd.png"/>
+                                <img style="display:none;" id="kitchen" ="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/3d_printer.png"/>
+                            </div>
+                            <div class="red-line">
+                                <img style="display:none;" id="airplane" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/bt.jpg"/>
+                                <img style="display:none;" id="airport" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/feature.png"/>
+                                <img style="display:none;" id="cafe" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/ereader.jpg"/>
+                                <img style="display:none;" id="car" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/local_lcd.png"/>
+                                <img style="display:none;" id="corridor" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/large_lcd.png"/>
+                                <img style="display:none;" id="gym" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/notebook.png"/>
+                                <img style="display:none;" id="restaurant" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/digital_cam.png"/>
+                                <img style="display:none;" id="train" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/scanner.png"/>
+                                <img style="display:none;" id="trainStn" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/dvd.png"/>
+                            </div>
+                        </div>
+                        <div id="team-options">
+                            <form>
+                                <p>Team Member 1</p>
+                                <select class="teamOption" multiple="multiple">
+                                    <option id="home-1">Home</option>
+                                	<option id="gym-1">Gym</option>
+                                	<option id="cafe-1">Café</option>
+                                	<option id="hub-1">Hub/Touchdown</option>
+                                	<option id="cafeteria-1">Cafeteria</option>
+                                	<option id="kitchen-1">Kitchen</option>
+                                	<option id="corridor-1">Corridor</option>
+                                	<option id="phoneBooth-1">Phone Booth</option>
+                                	<option id="smallLab-1">Small Lab -Proto</option>
+                                	<option id="shop-1">Machine Shop</option>
+                                	<option id="fabLab-1">Manufacturing Lab</option>
+                                	<option id="demoRoom-1">Demo Room</option>
+                                	<option id="auditorium-1">Auditorium</option>
+                                	<option id="officeDesk-1">Office Room Desk</option>
+                                	<option id="cubeDesk-1">Cubicle Desk</option>
+                                	<option id="openDesk-1">Open Space Desk</option>
+                                	<option id="quietRoom-1">Quiet Room</option>
+                                	<option id="teamRoom-1">Team Space - Room</option>
+                                	<option id="teamTable-1">Team Space - Big Table</option>
+                                	<option id="mtgRoom-1">Meeting Room</option>
+                                	<option id="ProjWall-1">Project Space - Wall</option>
+                                	<option id="projRoom-1">Project Space - Room</option>
+                                	<option id="3dTeam-1">3D Team Neighborhood</option>
+                                	<option id="friendHome-1">Friend Home</option>
+                                	<option id="restaurant-1">Restaurant</option>
+                                	<option id="trainStn-1">Train Station</option>
+                                	<option id="airport-1">Airport Gate/Lounge</option>
+                                	<option id="train-1">Train</option>
+                                	<option id="airplane-1">Airplane</option>
+                                	<option id="car-1">Car</option>
+                                	<option id="freeDesk-1">Free Address Desk</option>
+                                	</select>
+                                <p>Team Member 2</p>
+                                <select class="teamOption" multiple="multiple">
+                                	<option id="home-2">Home</option>
+                                	<option id="gym-2">Gym</option>
+                                	<option id="cafe-2">Café</option>
+                                	<option id="hub-2">Hub/Touchdown</option>
+                                	<option id="cafeteria-2">Cafeteria</option>
+                                	<option id="kitchen-2">Kitchen</option>
+                                	<option id="corridor-2">Corridor</option>
+                                	<option id="phoneBooth-2">Phone Booth</option>
+                                	<option id="smallLab-2">Small Lab -Proto</option>
+                                	<option id="shop-2">Machine Shop</option>
+                                	<option id="fabLab-2">Manufacturing Lab</option>
+                                	<option id="demoRoom-2">Demo Room</option>
+                                	<option id="auditorium-2">Auditorium</option>
+                                	<option id="officeDesk-2">Office Room Desk</option>
+                                	<option id="cubeDesk-2">Cubicle Desk</option>
+                                	<option id="openDesk-2">Open Space Desk</option>
+                                	<option id="quietRoom-2">Quiet Room</option>
+                                	<option id="teamRoom-2">Team Space - Room</option>
+                                	<option id="teamTable-2">Team Space - Big Table</option>
+                                	<option id="mtgRoom-2">Meeting Room</option>
+                                	<option id="ProjWall-2">Project Space - Wall</option>
+                                	<option id="projRoom-2">Project Space - Room</option>
+                                	<option id="3dTeam-2">3D Team Neighborhood</option>
+                                	<option id="friendHome-2">Friend Home</option>
+                                	<option id="restaurant-2">Restaurant</option>
+                                	<option id="trainStn-2">Train Station</option>
+                                	<option id="airport-2">Airport Gate/Lounge</option>
+                                	<option id="train-2">Train</option>
+                                	<option id="airplane-2">Airplane</option>
+                                	<option id="car-2">Car</option>
+                                	<option id="freeDesk-2">Free Address Desk</option>
+                                </select>
+                                <p>Team Member 3</p>
+                                <select class="teamOption" multiple="multiple">
+                                	<option id="home-3">Home</option>
+                                	<option id="gym-3">Gym</option>
+                                	<option id="cafe-3">Café</option>
+                                	<option id="hub-3">Hub/Touchdown</option>
+                                	<option id="cafeteria-3">Cafeteria</option>
+                                	<option id="kitchen-3">Kitchen</option>
+                                	<option id="corridor-3">Corridor</option>
+                                	<option id="phoneBooth-3">Phone Booth</option>
+                                	<option id="smallLab-3">Small Lab -Proto</option>
+                                	<option id="shop-3">Machine Shop</option>
+                                	<option id="fabLab-3">Manufacturing Lab</option>
+                                	<option id="demoRoom-3">Demo Room</option>
+                                	<option id="auditorium-3">Auditorium</option>
+                                	<option id="officeDesk-3">Office Room Desk</option>
+                                	<option id="cubeDesk-3">Cubicle Desk</option>
+                                	<option id="openDesk-3">Open Space Desk</option>
+                                	<option id="quietRoom-3">Quiet Room</option>
+                                	<option id="teamRoom-3">Team Space - Room</option>
+                                	<option id="teamTable-3">Team Space - Big Table</option>
+                                	<option id="mtgRoom-3">Meeting Room</option>
+                                	<option id="ProjWall-3">Project Space - Wall</option>
+                                	<option id="projRoom-3">Project Space - Room</option>
+                                	<option id="3dTeam-3">3D Team Neighborhood</option>
+                                	<option id="friendHome-3">Friend Home</option>
+                                	<option id="restaurant-3">Restaurant</option>
+                                	<option id="trainStn-3">Train Station</option>
+                                	<option id="airport-3">Airport Gate/Lounge</option>
+                                	<option id="train-3">Train</option>
+                                	<option id="airplane-3">Airplane</option>
+                                	<option id="car-3">Car</option>
+                                	<option id="freeDesk-3">Free Address Desk</option>
+                                </select>              
+                            </form>
+                        </div>
+                    </div>
+                </article>
+                
+                <div class="line"></div>
+                
+            </section>
 
-    
+        <footer> <!-- Marking the footer section -->
 
-    
+           <div class="line"></div>
+           
+           <p>Copyright - Stanford PBL</p> <!-- Change the copyright notice -->
+           
+           <a href="#" class="up">Go UP</a>
+           <a href="http://tutorialzine.com/2010/02/html5-css3-website-template/" class="by">Template by Tutorialzine</a>
+           
 
-    
-      <h2>Authors</h2>
-      <p>Renate Fruchter<br/>Leonard Medlock</p>
-    
-
-    
-      <h2>Contact</h2>
-      <p> (leonard.medlock@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/lmedlock/locAAPE/zipball/master">zip</a> or
-      <a href="https://github.com/lmedlock/locAAPE/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/lmedlock/locAAPE</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/lmedlock/locAAPE">lmedlock/locAAPE</a>
-    </div>
-
-  </div>
-
-</body>
+        </footer>
+            
+		</section> <!-- Closing the #page section -->
+        
+    </body>
 </html>
