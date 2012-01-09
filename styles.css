@@ -297,6 +297,17 @@ footer a.up{
 
 #team-options p{
     padding-top:10px;
+    font-style:bold;
+}
+
+#team-options ul{
+    list-style:none;
+    height:150px;
+    width:200px;
+    overflow-y:scroll;
+    padding:5px;
+    border-bottom:1px dotted #fff;
+    border-top:1px dotted #fff;
 }
 
 .aware{
@@ -371,4 +382,9 @@ text-align:center;
     -moz-box-shadow: 0 0 8px #fff;
     -webkit-box-shadow: 0 0 8px #fff;
     box-shadow: 0px 0px 8px #fff;
+}
+
+.initSize{
+    width:50px;
+    height:50px;
 }

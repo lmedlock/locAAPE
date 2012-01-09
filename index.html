@@ -5,14 +5,44 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>locAAPE</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
-        <link rel="stylesheet" type="text/css" href="ui.dropdownchecklist.standalone.css" />
+        <!--link rel="stylesheet" type="text/css" href="ui.dropdownchecklist.standalone.css" /-->
         <script src="http://jquery.com/src/jquery-latest.js"></script>
-        <script src="jquery-ui-1.8.13.custom.min.js"></script>
-        <script src="ui.dropdownchecklist-1.4-min.js"></script>
+        <!--script src="jquery-ui-1.8.13.custom.min.js"></script-->
+        <!--script src="ui.dropdownchecklist-1.4-min.js"></script-->
         <script>
-            $(document).ready(function() {
-                $(".teamOption").dropdownchecklist({emptyText: "Select Locations Here...",maxDropHeight: 150, width:200});
-            });
+            /*$(document).ready(function() {
+                $(".teamOption").dropdownchecklist({
+                    emptyText: "Select Locations Here...",
+                    maxDropHeight: 150, 
+                    width:200,
+                    firstItemChecksAll: true, 
+                    explicitClose: '...close',
+                    onItemClick: function(checkbox, selector){
+                                	var name = checkbox.val();
+                                    var all = selector.val();
+                                    console.log(all);
+                                    }
+                    });
+            });*/
+            
+            function locAAPE(name,id){
+                    var number = $('input:checked[name*=' + name + ']').length;
+                    switch(number){
+                        case 0: $('#' + id).css("width","50px");
+                                $('#' + id).css("height","50px");
+                                break;
+                        case 1: $('#' + id).css("width","60px");
+                                $('#' + id).css("height","60px");
+                                break;
+                        case 2: $('#' + id).css("width","70px");
+                                $('#' + id).css("height","70px");
+                                break;
+                        case 3: $('#' + id).css("width","85px");
+                                $('#' + id).css("height","85px");
+                                break;
+                        };
+                    
+                }
 
         </script>
         
@@ -49,182 +79,176 @@
                     <div class="articleBody clear">
                         <div class="dev-list">
                             <ul>
-                                <li>Home</li>
-                                <li>Gym</li>
-                                <li>Café</li>
-                                <li>Hub/Touchdown</li>
-                                <li>Cafeteria</li>
-                                <li>Kitchen</li>
-                                <li>Corridor</li>
-                                <li>Phone Booth</li>
-                                <li>Small Lab -Proto</li>
-                                <li>Machine Shop</li>
-                                <li>Manufacturing Lab</li>
-                                <li>Demo Room</li>
-                                <li>Auditorium</li>
-                                <li>Office Room Desk</li>
-                                <li>Cubicle Desk</li>
-                                <li>Open Space Desk</li>
-                                <li>Quiet Room</li>
-                                <li>Team Space - Room</li>
-                                <li>Team Space - Big Table</li>
-                                <li>Meeting Room</li>
-                                <li>Project Space - Wall</li>
-                                <li>Project Space - Room</li>
-                                <li>3D Team Neighborhood</li>
-                                <li>Friend Home</li>
-                                <li>Restaurant</li>
-                                <li>Train Station</li>
-                                <li>Airport Gate/Lounge</li>
-                                <li>Train</li>
-                                <li>Airplane</li>
-                                <li>Car</li>
-                                <li>Free Address Desk</li>
+                                <li onclick="$('#home').toggle(); $(this).toggleClass('choice');">Home</li>
+                                <li onclick="$('#gym').toggle(); $(this).toggleClass('choice');">Gym</li>
+                                <li onclick="$('#cafe').toggle(); $(this).toggleClass('choice');">Café</li>
+                                <li onclick="$('#hub').toggle(); $(this).toggleClass('choice');">Hub/Touchdown</li>
+                                <li onclick="$('#cafeteria').toggle(); $(this).toggleClass('choice');">Cafeteria</li>
+                                <li onclick="$('#kitchen').toggle(); $(this).toggleClass('choice');">Kitchen</li>
+                                <li onclick="$('#corridor').toggle(); $(this).toggleClass('choice');">Corridor</li>
+                                <li onclick="$('#phoneBooth').toggle(); $(this).toggleClass('choice');">Phone Booth</li>
+                                <li onclick="$('#smallLab').toggle(); $(this).toggleClass('choice');">Small Proto Lab</li>
+                                <li onclick="$('#shop').toggle(); $(this).toggleClass('choice');">Machine Shop</li>
+                                <li onclick="$('#fabLab').toggle(); $(this).toggleClass('choice');">Manufacturing Lab</li>
+                                <li onclick="$('#demoRoom').toggle(); $(this).toggleClass('choice');">Demo Room</li>
+                                <li onclick="$('#auditorium').toggle(); $(this).toggleClass('choice');">Auditorium</li>
+                                <li onclick="$('#officeDesk').toggle(); $(this).toggleClass('choice');">Office Room Desk</li>
+                                <li onclick="$('#cubeDesk').toggle(); $(this).toggleClass('choice');">Cubicle Desk</li>
+                                <li onclick="$('#openDesk').toggle(); $(this).toggleClass('choice');">Open Space Desk</li>
+                                <li onclick="$('#quietRoom').toggle(); $(this).toggleClass('choice');">Quiet Room</li>
+                                <li onclick="$('#teamRoom').toggle(); $(this).toggleClass('choice');">Team Space - Room</li>
+                                <li onclick="$('#teamTable').toggle(); $(this).toggleClass('choice');">Team Space - Big Table</li>
+                                <li onclick="$('#mtgRoom').toggle(); $(this).toggleClass('choice');">Meeting Room</li>
+                                <li onclick="$('#projWall').toggle(); $(this).toggleClass('choice');">Persistent Project Wall</li>
+                                <li onclick="$('#projSpace').toggle(); $(this).toggleClass('choice');">Persistent Project Room</li>
+                                <li onclick="$('#3dTeam').toggle(); $(this).toggleClass('choice');">3D Team Neighborhood</li>
+                                <li onclick="$('#friendHome').toggle(); $(this).toggleClass('choice');">Friend Home</li>
+                                <li onclick="$('#restaurant').toggle(); $(this).toggleClass('choice');">Restaurant</li>
+                                <li onclick="$('#trainStn').toggle(); $(this).toggleClass('choice');">Train Station</li>
+                                <li onclick="$('#airport').toggle(); $(this).toggleClass('choice');">Airport Gate/Lounge</li>
+                                <li onclick="$('#train').toggle(); $(this).toggleClass('choice');">Train</li>
+                                <li onclick="$('#airplane').toggle(); $(this).toggleClass('choice');">Airplane</li>
+                                <li onclick="$('#car').toggle(); $(this).toggleClass('choice');">Car</li>
                             <ul>
                         </div>
                         <div class="aape-zones">
                             <div class="grn-line">
-                                <img style="display:none;" id="home" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/sensor.png"/>
-                                <img style="display:none;" id="shop" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/smart_glasses.png"/>
-                                <img style="display:none;" id="fabLab" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/laptop.jpg"/>
-                                <img style="display:none;" id="mtgRoom" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/tablet_touch.png"/>
-                                <img style="display:none;" id="projRoom" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/tablet_pc.jpg"/>
-                                <img style="display:none;" id="projWall" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/desktop.png"/>
-                                <img style="display:none;" id="quietRoom" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/robot.png"/>
-                                <img style="display:none;" id="smallLab" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/kinect.jpg"/>
-                                <img style="display:none;" id="teamTable" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/smartboard.png"/>
-                                <img style="display:none;" id="teamRoom" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/iroom.png"/>
-                                <img style="display:none;" id="3dTeam" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/iroom.png"/>
+                                <img title="HOME" style="display:none;" id="home" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/home.png"/>
+                                <img title="MACHINE SHOP" style="display:none;" id="shop" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/shop.png"/>
+                                <img title="MFG LAB" style="display:none;" id="fabLab" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/fab_lab.png"/>
+                                <img title="MEETING ROOM" style="display:none;" id="mtgRoom" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/mtg_room.png"/>
+                                <img title="PERSISTENT PROJECT SPACE" style="display:none;" id="projSpace" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/proj_space.png"/>
+                                <img title="PERSISTENT PROJECT WALL" style="display:none;" id="projWall" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/proj_wall.png"/>
+                                <img title="QUIET ROOM" style="display:none;" id="quietRoom" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/quiet_room.png"/>
+                                <img title="SMALL PROTO LAB" style="display:none;" id="smallLab" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/small_lab.png"/>
+                                <img title="TEAM TABLE" style="display:none;" id="teamTable" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/team_table.png"/>
+                                <img title="TEAM ROOM" style="display:none;" id="teamRoom" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/team_room.png"/>
+                                <img title="TEAM 3D SPACE" style="display:none;" id="3dTeam" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/3d_team.png"/>
                             </div>
                             <div class="blu-line">
-                                <img style="display:none;" id="cubeDesk" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/whiteboard.png"/>
-                                <img style="display:none;" id="openDesk" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/postnote.png"/>
-                                <img style="display:none;" id="officeDesk" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
-                                <img style="display:none;" id="demoRoom" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
-                                <img style="display:none;" id="hub" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
-                                <img style="display:none;" id="phoneBooth" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/smartphone.png"/>
+                                <img title="CUBICLE DESK" style="display:none;" id="cubeDesk" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/cube.png"/>
+                                <img title="OPEN AREA DESK" style="display:none;" id="openDesk" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/open.png"/>
+                                <img title="OFFICE ROOM DESK" style="display:none;" id="officeDesk" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/office.png"/>
+                                <img title="DEMO ROOM" style="display:none;" id="demoRoom" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/demo.png"/>
+                                <img title="HUB" style="display:none;" id="hub" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/hubtd.png"/>
+                                <img title="FRIEND'S HOME" style="display:none;" id="friendHome" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/friend.png"/>
+                                <img title="PHONE BOOTH" style="display:none;" id="phoneBooth" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/phonebooth.png"/>
                             </div>
                             <div class="ylw-line">
-                                <img style="display:none;" id="auditorium" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/usb.png"/>
-                                <img style="display:none;" id="cafeteria" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/hdd.png"/>
-                                <img style="display:none;" id="kitchen" ="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/3d_printer.png"/>
+                                <img title="AUDITORIUM" style="display:none;" id="auditorium" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/auditorium.png"/>
+                                <img title="CAFETERIA" style="display:none;" id="cafeteria" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/cafeteria.png"/>
+                                <img title="KITCHEN" style="display:none;" id="kitchen" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/kitch.png"/>
                             </div>
                             <div class="red-line">
-                                <img style="display:none;" id="airplane" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/bt.jpg"/>
-                                <img style="display:none;" id="airport" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/feature.png"/>
-                                <img style="display:none;" id="cafe" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/ereader.jpg"/>
-                                <img style="display:none;" id="car" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/local_lcd.png"/>
-                                <img style="display:none;" id="corridor" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/large_lcd.png"/>
-                                <img style="display:none;" id="gym" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/notebook.png"/>
-                                <img style="display:none;" id="restaurant" src="http://src.sencha.io/60/http://ldt.stanford.edu/~lmedlock/icons/digital_cam.png"/>
-                                <img style="display:none;" id="train" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/scanner.png"/>
-                                <img style="display:none;" id="trainStn" src="http://src.sencha.io/15/http://ldt.stanford.edu/~lmedlock/icons/dvd.png"/>
+                                <img title="PLANE" style="display:none;" id="airplane" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/plane.png"/>
+                                <img title="AIRPORT" style="display:none;" id="airport" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/airport.png"/>
+                                <img title="CAFE" style="display:none;" id="cafe" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/cafe.png"/>
+                                <img title="CAR" style="display:none;" id="car" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/car.png"/>
+                                <img title="CORRIDOR" style="display:none;" id="corridor" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/corridor.png"/>
+                                <img title="GYM" style="display:none;" id="gym" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/gym.png"/>
+                                <img title="RESTAURANT" style="display:none;" id="restaurant" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/restaurant.png"/>
+                                <img title="TRAIN" style="display:none;" id="train" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/train.png"/>
+                                <img title="TRAIN STATION" style="display:none;" id="trainStn" class="initSize" src="http://ldt.stanford.edu/~lmedlock/icons/train_station.png"/>
                             </div>
                         </div>
                         <div id="team-options">
                             <form>
                                 <p>Team Member 1</p>
-                                <select class="teamOption" multiple="multiple">
-                                    <option id="home-1">Home</option>
-                                	<option id="gym-1">Gym</option>
-                                	<option id="cafe-1">Café</option>
-                                	<option id="hub-1">Hub/Touchdown</option>
-                                	<option id="cafeteria-1">Cafeteria</option>
-                                	<option id="kitchen-1">Kitchen</option>
-                                	<option id="corridor-1">Corridor</option>
-                                	<option id="phoneBooth-1">Phone Booth</option>
-                                	<option id="smallLab-1">Small Lab -Proto</option>
-                                	<option id="shop-1">Machine Shop</option>
-                                	<option id="fabLab-1">Manufacturing Lab</option>
-                                	<option id="demoRoom-1">Demo Room</option>
-                                	<option id="auditorium-1">Auditorium</option>
-                                	<option id="officeDesk-1">Office Room Desk</option>
-                                	<option id="cubeDesk-1">Cubicle Desk</option>
-                                	<option id="openDesk-1">Open Space Desk</option>
-                                	<option id="quietRoom-1">Quiet Room</option>
-                                	<option id="teamRoom-1">Team Space - Room</option>
-                                	<option id="teamTable-1">Team Space - Big Table</option>
-                                	<option id="mtgRoom-1">Meeting Room</option>
-                                	<option id="ProjWall-1">Project Space - Wall</option>
-                                	<option id="projRoom-1">Project Space - Room</option>
-                                	<option id="3dTeam-1">3D Team Neighborhood</option>
-                                	<option id="friendHome-1">Friend Home</option>
-                                	<option id="restaurant-1">Restaurant</option>
-                                	<option id="trainStn-1">Train Station</option>
-                                	<option id="airport-1">Airport Gate/Lounge</option>
-                                	<option id="train-1">Train</option>
-                                	<option id="airplane-1">Airplane</option>
-                                	<option id="car-1">Car</option>
-                                	<option id="freeDesk-1">Free Address Desk</option>
-                                	</select>
+                                <ul id="team-1">
+                                    <li><input type="checkbox" name="home-1" onclick="locAAPE('home','home');"> Home</li>
+                                	<li><input type="checkbox" name="gym-1" onclick="locAAPE('gym','gym');"> Gym</li>
+                                	<li><input type="checkbox" name="cafe-1" onclick="locAAPE('cafe','cafe');"> Café</li>
+                                	<li><input type="checkbox" name="hub-1" onclick="locAAPE('hub','hub');"> Hub/Touchdown</li>
+                                	<li><input type="checkbox" name="cafeteria-1" onclick="locAAPE('cafeteria','cafeteria');"> Cafeteria</li>
+                                	<li><input type="checkbox" name="kitchen-1" onclick="locAAPE('kitchen','kitchen');"> Kitchen</li>
+                                	<li><input type="checkbox" name="corridor-1" onclick="locAAPE('corridor','corridor');"> Corridor</li>
+                                	<li><input type="checkbox" name="phoneBooth-1" onclick="locAAPE('phoneBooth','phoneBooth');"> Phone Booth</li>
+                                	<li><input type="checkbox" name="smallLab-1" onclick="locAAPE('smallLab','smallLab');"> Small Lab -Proto</li>
+                                	<li><input type="checkbox" name="shop-1" onclick="locAAPE('shop','shop');"> Machine Shop</li>
+                                	<li><input type="checkbox" name="fabLab-1" onclick="locAAPE('fabLab','fabLab');"> Manufacturing Lab</li>
+                                	<li><input type="checkbox" name="demoRoom-1" onclick="locAAPE('demoRoom','demoRoom');"> Demo Room</li>
+                                	<li><input type="checkbox" name="auditorium-1" onclick="locAAPE('auditorium','auditorium');"> Auditorium</li>
+                                	<li><input type="checkbox" name="officeDesk-1" onclick="locAAPE('officeDesk','officeDesk');"> Office Room Desk</li>
+                                	<li><input type="checkbox" name="cubeDesk-1" onclick="locAAPE('cubeDesk','cubeDesk');"> Cubicle Desk</li>
+                                	<li><input type="checkbox" name="openDesk-1" onclick="locAAPE('openDesk','openDesk');"> Open Space Desk</li>
+                                	<li><input type="checkbox" name="teamRoom-1" onclick="locAAPE('teamRoom','teamRoom');"> Team Space - Room</li>
+                                	<li><input type="checkbox" name="teamTable-1" onclick="locAAPE('teamTable','teamTable');"> Team Space - Big Table</li>
+                                	<li><input type="checkbox" name="mtgRoom-1" onclick="locAAPE('mtgRoom','mtgRoom');"> Meeting Room</li>
+                                	<li><input type="checkbox" name="projWall-1" onclick="locAAPE('projWall','projWall');"> Project Space - Wall</li>
+                                	<li><input type="checkbox" name="projSpace-1" onclick="locAAPE('projSpace','projSpace');"> Project Space - Room</li>
+                                	<li><input type="checkbox" name="3dTeam-1" onclick="locAAPE('3dTeam','3dTeam');"> 3D Team Neighborhood</li>
+                                	<li><input type="checkbox" name="friendHome-1" onclick="locAAPE('friendHome','friendHome');"> Friend Home</li>
+                                	<li><input type="checkbox" name="restaurant-1" onclick="locAAPE('restaurant','restaurant');"> Restaurant</li>
+                                	<li><input type="checkbox" name="trainStn-1" onclick="locAAPE('trainStn','trainStn');"> Train Station</li>
+                                	<li><input type="checkbox" name="airport-1" onclick="locAAPE('airport','airport');"> Airport Gate/Lounge</li>
+                                	<li><input type="checkbox" name="train-1" onclick="locAAPE('train','train');"> Train</li>
+                                	<li><input type="checkbox" name="airplane-1" onclick="locAAPE('airplane','airplane');"> Airplane</li>
+                                	<li><input type="checkbox" name="car-1" onclick="locAAPE('car','car');"> Car</li>
+                                </ul>
                                 <p>Team Member 2</p>
-                                <select class="teamOption" multiple="multiple">
-                                	<option id="home-2">Home</option>
-                                	<option id="gym-2">Gym</option>
-                                	<option id="cafe-2">Café</option>
-                                	<option id="hub-2">Hub/Touchdown</option>
-                                	<option id="cafeteria-2">Cafeteria</option>
-                                	<option id="kitchen-2">Kitchen</option>
-                                	<option id="corridor-2">Corridor</option>
-                                	<option id="phoneBooth-2">Phone Booth</option>
-                                	<option id="smallLab-2">Small Lab -Proto</option>
-                                	<option id="shop-2">Machine Shop</option>
-                                	<option id="fabLab-2">Manufacturing Lab</option>
-                                	<option id="demoRoom-2">Demo Room</option>
-                                	<option id="auditorium-2">Auditorium</option>
-                                	<option id="officeDesk-2">Office Room Desk</option>
-                                	<option id="cubeDesk-2">Cubicle Desk</option>
-                                	<option id="openDesk-2">Open Space Desk</option>
-                                	<option id="quietRoom-2">Quiet Room</option>
-                                	<option id="teamRoom-2">Team Space - Room</option>
-                                	<option id="teamTable-2">Team Space - Big Table</option>
-                                	<option id="mtgRoom-2">Meeting Room</option>
-                                	<option id="ProjWall-2">Project Space - Wall</option>
-                                	<option id="projRoom-2">Project Space - Room</option>
-                                	<option id="3dTeam-2">3D Team Neighborhood</option>
-                                	<option id="friendHome-2">Friend Home</option>
-                                	<option id="restaurant-2">Restaurant</option>
-                                	<option id="trainStn-2">Train Station</option>
-                                	<option id="airport-2">Airport Gate/Lounge</option>
-                                	<option id="train-2">Train</option>
-                                	<option id="airplane-2">Airplane</option>
-                                	<option id="car-2">Car</option>
-                                	<option id="freeDesk-2">Free Address Desk</option>
-                                </select>
+                                <ul id="team-2">
+                                    <li><input type="checkbox" name="home-2" onclick="locAAPE('home','home');"> Home</li>
+                                    <li><input type="checkbox" name="gym-2" onclick="locAAPE('gym','gym');"> Gym</li>
+                                	<li><input type="checkbox" name="cafe-2" onclick="locAAPE('cafe','cafe');"> Café</li>
+                                	<li><input type="checkbox" name="hub-2" onclick="locAAPE('hub','hub');"> Hub/Touchdown</li>
+                                	<li><input type="checkbox" name="cafeteria-2" onclick="locAAPE('cafeteria','cafeteria');"> Cafeteria</li>
+                                	<li><input type="checkbox" name="kitchen-2" onclick="locAAPE('kitchen','kitchen');"> Kitchen</li>
+                                	<li><input type="checkbox" name="corridor-2" onclick="locAAPE('corridor','corridor');"> Corridor</li>
+                                	<li><input type="checkbox" name="phoneBooth-2" onclick="locAAPE('phoneBooth','phoneBooth');"> Phone Booth</li>
+                                	<li><input type="checkbox" name="smallLab-2" onclick="locAAPE('smallLab','smallLab');"> Small Lab -Proto</li>
+                                	<li><input type="checkbox" name="shop-2" onclick="locAAPE('shop','shop');"> Machine Shop</li>
+                                	<li><input type="checkbox" name="fabLab-2" onclick="locAAPE('fabLab','fabLab');"> Manufacturing Lab</li>
+                                	<li><input type="checkbox" name="demoRoom-2" onclick="locAAPE('demoRoom','demoRoom');"> Demo Room</li>
+                                	<li><input type="checkbox" name="auditorium-2" onclick="locAAPE('auditorium','auditorium');"> Auditorium</li>
+                                	<li><input type="checkbox" name="officeDesk-2" onclick="locAAPE('officeDesk','officeDesk');"> Office Room Desk</li>
+                                	<li><input type="checkbox" name="cubeDesk-2" onclick="locAAPE('cubeDesk','cubeDesk');"> Cubicle Desk</li>
+                                	<li><input type="checkbox" name="openDesk-2" onclick="locAAPE('openDesk','openDesk');"> Open Space Desk</li>
+                                	<li><input type="checkbox" name="teamRoom-2" onclick="locAAPE('teamRoom','teamRoom');"> Team Space - Room</li>
+                                	<li><input type="checkbox" name="teamTable-2" onclick="locAAPE('teamTable','teamTable');"> Team Space - Big Table</li>
+                                	<li><input type="checkbox" name="mtgRoom-2" onclick="locAAPE('mtgRoom','mtgRoom');"> Meeting Room</li>
+                                	<li><input type="checkbox" name="projWall-2" onclick="locAAPE('projWall','projWall');"> Project Space - Wall</li>
+                                	<li><input type="checkbox" name="projSpace-2" onclick="locAAPE('projSpace','projSpace');"> Project Space - Room</li>
+                                	<li><input type="checkbox" name="3dTeam-2" onclick="locAAPE('3dTeam','3dTeam');"> 3D Team Neighborhood</li>
+                                	<li><input type="checkbox" name="friendHome-2" onclick="locAAPE('friendHome','friendHome');"> Friend Home</li>
+                                	<li><input type="checkbox" name="restaurant-2" onclick="locAAPE('restaurant','restaurant');"> Restaurant</li>
+                                	<li><input type="checkbox" name="trainStn-2" onclick="locAAPE('trainStn','trainStn');"> Train Station</li>
+                                	<li><input type="checkbox" name="airport-2" onclick="locAAPE('airport','airport');"> Airport Gate/Lounge</li>
+                                	<li><input type="checkbox" name="train-2" onclick="locAAPE('train','train');"> Train</li>
+                                	<li><input type="checkbox" name="airplane-2" onclick="locAAPE('airplane','airplane');"> Airplane</li>
+                                	<li><input type="checkbox" name="car-2" onclick="locAAPE('car','car');"> Car</li>
+                                </ul>
                                 <p>Team Member 3</p>
-                                <select class="teamOption" multiple="multiple">
-                                	<option id="home-3">Home</option>
-                                	<option id="gym-3">Gym</option>
-                                	<option id="cafe-3">Café</option>
-                                	<option id="hub-3">Hub/Touchdown</option>
-                                	<option id="cafeteria-3">Cafeteria</option>
-                                	<option id="kitchen-3">Kitchen</option>
-                                	<option id="corridor-3">Corridor</option>
-                                	<option id="phoneBooth-3">Phone Booth</option>
-                                	<option id="smallLab-3">Small Lab -Proto</option>
-                                	<option id="shop-3">Machine Shop</option>
-                                	<option id="fabLab-3">Manufacturing Lab</option>
-                                	<option id="demoRoom-3">Demo Room</option>
-                                	<option id="auditorium-3">Auditorium</option>
-                                	<option id="officeDesk-3">Office Room Desk</option>
-                                	<option id="cubeDesk-3">Cubicle Desk</option>
-                                	<option id="openDesk-3">Open Space Desk</option>
-                                	<option id="quietRoom-3">Quiet Room</option>
-                                	<option id="teamRoom-3">Team Space - Room</option>
-                                	<option id="teamTable-3">Team Space - Big Table</option>
-                                	<option id="mtgRoom-3">Meeting Room</option>
-                                	<option id="ProjWall-3">Project Space - Wall</option>
-                                	<option id="projRoom-3">Project Space - Room</option>
-                                	<option id="3dTeam-3">3D Team Neighborhood</option>
-                                	<option id="friendHome-3">Friend Home</option>
-                                	<option id="restaurant-3">Restaurant</option>
-                                	<option id="trainStn-3">Train Station</option>
-                                	<option id="airport-3">Airport Gate/Lounge</option>
-                                	<option id="train-3">Train</option>
-                                	<option id="airplane-3">Airplane</option>
-                                	<option id="car-3">Car</option>
-                                	<option id="freeDesk-3">Free Address Desk</option>
-                                </select>              
+                                <ul id="team-3">
+                                    <li><input type="checkbox" name="home-3" onclick="locAAPE('home','home');"> Home</li>
+                                    <li><input type="checkbox" name="gym-3" onclick="locAAPE('gym','gym');"> Gym</li>
+                                	<li><input type="checkbox" name="cafe-3" onclick="locAAPE('cafe','cafe');"> Café</li>
+                                	<li><input type="checkbox" name="hub-3" onclick="locAAPE('hub','hub');"> Hub/Touchdown</li>
+                                	<li><input type="checkbox" name="cafeteria-3" onclick="locAAPE('cafeteria','cafeteria');"> Cafeteria</li>
+                                	<li><input type="checkbox" name="kitchen-3" onclick="locAAPE('kitchen','kitchen');"> Kitchen</li>
+                                	<li><input type="checkbox" name="corridor-3" onclick="locAAPE('corridor','corridor');"> Corridor</li>
+                                	<li><input type="checkbox" name="phoneBooth-3" onclick="locAAPE('phoneBooth','phoneBooth');"> Phone Booth</li>
+                                	<li><input type="checkbox" name="smallLab-3" onclick="locAAPE('smallLab','smallLab');"> Small Lab -Proto</li>
+                                	<li><input type="checkbox" name="shop-3" onclick="locAAPE('shop','shop');"> Machine Shop</li>
+                                	<li><input type="checkbox" name="fabLab-3" onclick="locAAPE('fabLab','fabLab');"> Manufacturing Lab</li>
+                                	<li><input type="checkbox" name="demoRoom-3" onclick="locAAPE('demoRoom','demoRoom');"> Demo Room</li>
+                                	<li><input type="checkbox" name="auditorium-3" onclick="locAAPE('auditorium','auditorium');"> Auditorium</li>
+                                	<li><input type="checkbox" name="officeDesk-3" onclick="locAAPE('officeDesk','officeDesk');"> Office Room Desk</li>
+                                	<li><input type="checkbox" name="cubeDesk-3" onclick="locAAPE('cubeDesk','cubeDesk');"> Cubicle Desk</li>
+                                	<li><input type="checkbox" name="openDesk-3" onclick="locAAPE('openDesk','openDesk');"> Open Space Desk</li>
+                                	<li><input type="checkbox" name="teamRoom-3" onclick="locAAPE('teamRoom','teamRoom');"> Team Space - Room</li>
+                                	<li><input type="checkbox" name="teamTable-3" onclick="locAAPE('teamTable','teamTable');"> Team Space - Big Table</li>
+                                	<li><input type="checkbox" name="mtgRoom-3" onclick="locAAPE('mtgRoom','mtgRoom');"> Meeting Room</li>
+                                	<li><input type="checkbox" name="projWall-3" onclick="locAAPE('projWall','projWall');"> Project Space - Wall</li>
+                                	<li><input type="checkbox" name="projSpace-3" onclick="locAAPE('projSpace','projSpace');"> Project Space - Room</li>
+                                	<li><input type="checkbox" name="3dTeam-3" onclick="locAAPE('3dTeam','3dTeam');"> 3D Team Neighborhood</li>
+                                	<li><input type="checkbox" name="friendHome-3" onclick="locAAPE('friendHome','friendHome');"> Friend Home</li>
+                                	<li><input type="checkbox" name="restaurant-3" onclick="locAAPE('restaurant','restaurant');"> Restaurant</li>
+                                	<li><input type="checkbox" name="trainStn-3" onclick="locAAPE('trainStn','trainStn');"> Train Station</li>
+                                	<li><input type="checkbox" name="airport-3" onclick="locAAPE('airport','airport');"> Airport Gate/Lounge</li>
+                                	<li><input type="checkbox" name="train-3" onclick="locAAPE('train','train');"> Train</li>
+                                	<li><input type="checkbox" name="airplane-3" onclick="locAAPE('airplane','airplane');"> Airplane</li>
+                                	<li><input type="checkbox" name="car-3" onclick="locAAPE('car','car');"> Car</li>
+                                </ul>              
                             </form>
                         </div>
                     </div>
